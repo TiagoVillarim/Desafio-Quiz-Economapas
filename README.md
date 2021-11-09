@@ -1,4 +1,4 @@
-Este é um projeto realizado como um desafio do processo seletivo da empresa Economapas, no qual foi desenvolvida uma aplicação de um quiz feito em SPA sobre tecnologias, para o desenvolvimento foi utilizado o ReactJS, JavaScript, HTML, CSS, juntamente com o consumo de uma API externa.
+Este é um projeto realizado como um desafio do processo seletivo da empresa Economapas, no qual foi desenvolvida uma aplicação de um quiz feito em SPA sobre tecnologias. Para o desenvolvimento foi utilizado o ReactJS, JavaScript, HTML, CSS, juntamente com o consumo de uma API externa.
 
 
 
