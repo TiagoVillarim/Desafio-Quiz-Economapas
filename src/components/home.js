@@ -5,18 +5,32 @@ import HomeImage from '../assets/images/imageQuiz.jpg'
 
 export default function Home() {
 
-  const [inputName, setInputName] = useState('');
-
+  const [inputName, setInputName] = useState();
+  const [error, setError] = useState("Digite seu nome:")
 
   function saveUserName() {
-    if(inputName != null || inputName != undefined){
+      if(!authName()){
+        return;
+      }else{
+        let user = {
+          inputName: inputName,
+        }
+      }
       localStorage.setItem("userName", JSON.stringify(inputName));
-      setInputName();
-    }else{
-      alert("Opa, você esqueceu de digitar seu nome! tente novamente.")
-    }
+      alert('nome de usuário salvo com sucesso!')
+      setInputName("");
+      setError("Digite seu nome:")
+  };
 
-  }
+  function authName() {
+    if(inputName === undefined || inputName < 1){
+      setError("Opa, você esqueceu de digitar seu nome! tente novamente.")
+      return false;
+    }
+    return true;
+  };
+
+
 
   return(
     <>
@@ -30,9 +44,9 @@ export default function Home() {
               <h1 className="body-content-text">Seja bem vindo! teste seu conhecimento em tecnologia.</h1>
               <div className="input-container">
                 <label className="input-title">
-                  Digite seu nome:
+                  {error}
                 </label>
-                <input type="text" value={inputName} onChange={event => setInputName(event.target.value) } className="input-name" maxLength="20"/>
+                <input type="text" value={inputName} placeholder="ex: tiago villarim" onChange={event => setInputName(event.target.value) } className="input-name" maxLength="20"/>
                 <button onClick={saveUserName} className="button">Próximo</button>
               </div>
             </div>
