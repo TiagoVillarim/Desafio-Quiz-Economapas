@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import HomeStyle from './styles/homeStyle.scss';
-import HomeImage from '../assets/images/imageQuiz.jpg'
+import { useHistory } from "react-router";
+import HomeStyle from '../components/styles/homeStyle.scss';
+import Keyframes from '../components/styles/keyframes.scss'
+
 
 
 export default function Home() {
+
+  let history = useHistory();
 
   const [inputName, setInputName] = useState();
   const [error, setError] = useState("Digite seu nome:")
@@ -16,10 +20,10 @@ export default function Home() {
           inputName: inputName,
         }
       }
-      localStorage.setItem("userName", JSON.stringify(inputName));
-      alert('nome de usuário salvo com sucesso!')
+      localStorage.setItem("userName", JSON.stringify(inputName).toLocaleLowerCase());
       setInputName("");
       setError("Digite seu nome:")
+      history.push("/quizHomePage")
   };
 
   function authName() {
@@ -46,7 +50,7 @@ export default function Home() {
                 <label className="input-title">
                   {error}
                 </label>
-                <input type="text" value={inputName} placeholder="ex: tiago villarim" onChange={event => setInputName(event.target.value) } className="input-name" maxLength="20"/>
+                <input type="text" value={inputName} placeholder="ex: tiago villarim" onChange={event => setInputName(event.target.value) } className="input-name" maxLength="21"/>
                 <button onClick={saveUserName} className="button">Próximo</button>
               </div>
             </div>
