@@ -80,7 +80,8 @@
 
     .question {
       width: 80%;
-      padding-left: -50px;
+      padding-left: -40px;
+      padding-right: 20px;
     }
   }
 
@@ -91,7 +92,7 @@
     align-items: center;
     font-size: 15px;
     font-weight: 500;
-    margin: 15px 0 15px 450px;
+    margin: 35px 0 15px 450px;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
@@ -103,8 +104,24 @@
     transition: 0.3s;
   }
 
+
   .answer-alternative:hover {
     box-shadow: 1px 1px 10px 1px rgba($color: #4BB6F2, $alpha: 0.4);
+  }
+
+  .answer-alternative:focus {
+    background-color: #4BB6F2;
+    color: #fff;
+  }
+  
+  .answer-alternative:hover {
+    background-color: #4BB6F2;
+    color: #fff;
+    
+  }
+
+  .radio-dot {
+    margin-right: 2%;
   }
 }
 

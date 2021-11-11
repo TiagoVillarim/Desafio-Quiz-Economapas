@@ -93,10 +93,10 @@ export default function QuizQuestions() {
           <a className="question">{currentQuestion && currentQuestion.question}</a>
         </div>
         {currentQuestion && Object.entries(currentQuestion.answers).map(([key, value], index) => {
-          if (value == null ) return undefined;
+          if (value === null ) return undefined;
           return(
             <button className="answer-alternative" key={index} id={key} value={index} onClick={({target}) => handleCheckbox(target)}>
-              <input type="radio" id={key} value={index} onChange={({ target }) => handleCheckbox(target)} checked={selectedQuestion == index} />
+              <input className="radio-dot" type="radio" id={key} value={index} onChange={({ target }) => handleCheckbox(target)} checked={selectedQuestion == index} />
               {key.slice(-1)[0].toUpperCase()} - {value}
             </button>
           )

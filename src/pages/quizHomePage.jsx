@@ -3,6 +3,7 @@ import QuizHomePageStyle from '../components/styles/quizHomePageStyle.scss';
 import Keyframes from '../components/styles/keyframes.scss'
 import { useHistory } from "react-router-dom";
 import api from "../services/Api";
+import image from '../assets/images/char.png'
 
 export default function QuizHomePage() {
 
@@ -33,7 +34,9 @@ export default function QuizHomePage() {
 
       <section className="section-container">
         <h1 className="section-container-title">Deseja realizar o quiz ?</h1>
-
+        <div className="image-box">
+          <img src={image} className="char-image"/>
+        </div>
         <div className="select-section">
           <label className="select-label">Escolha a dificuldade:</label>
             <select name="difficulty" id="difficulty" value={select} size="1" className="select" onChange={({target}) => setSelect(target.value)}>

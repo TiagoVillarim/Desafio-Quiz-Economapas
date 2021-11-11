@@ -42,6 +42,18 @@
   justify-content: center;
   margin-top: 10%;
 
+  .image-box {
+    display: flex;
+    position: absolute;
+    left: 13%;
+
+    .char-image {
+      height: 60vh;
+      animation-name: appear;
+      animation-duration: 0.5s;
+    }
+  }
+
   .section-container-title {
     font-size: 50px;
     font-weight: 500;
