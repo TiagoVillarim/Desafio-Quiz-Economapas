@@ -1,13 +1,60 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router";
 import quizGabaritoStyle from "../components/styles/quizGabarito.scss"
 
 export default function Gabarito() {
 
+  const history = useHistory()
+
+  const [results, setResults] = useState([]);
+  const [correct, setCorrect] = useState([]);
+  const [score, setScore] = useState(0);
+
+  useEffect(() => {
+    const resultData = history.location.state.data;
+    setResults(resultData);
+
+    let scoreCounter = 0
+
+     const answersComparison = resultData.map(answer => {
+        const correctAlt = answer.correctAnswer[0].split('_')[1];
+        const userAlt = answer.userAnswer.split('_')[1];
+        const isCorrect = correctAlt === userAlt
+        const payload = {
+          correctChoice: correctAlt, 
+          userChoice: userAlt, 
+          isCorrect: isCorrect,
+        }
+        if(isCorrect) {
+          scoreCounter++;
+        }
+        return payload;
+      })
+      setScore(scoreCounter);
+      setCorrect(answersComparison);
+  }, []);
+
+  useEffect(() => {
+    console.log(score)
+    console.log(correct)
+  }, [score])
+  
   let user = JSON.parse(localStorage.getItem("userName"));
 
-  return(
+  const resultComparison = () => {
+    return correct.map((answer, index) => {
+      return (
+        <div className="alternatives" key={index}>
+          <h1 className="question-gabarito">Question {index + 1}:</h1>
+          <h1 className="user-choice">{answer.userChoice}</h1>
+          <h1 className="correct-choice">{answer.correctChoice}</h1>
+        </div>
+      )
+    })
+  }
+
+  return(    
     <>
       <header className="header-container-gabarito">
         <div className="title-container-gabarito">
@@ -19,6 +66,13 @@ export default function Gabarito() {
           <a className="user-name-gabarito">{user}</a>
         </div>
       </header>
+
+      <section className="Score-box">
+        <div className="score">Sua pontuação : <strong>{score && score}/10</strong></div>
+        <div className="result">
+          {resultComparison()}
+        </div>
+      </section>
     </>
   )
 }

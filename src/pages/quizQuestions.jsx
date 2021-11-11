@@ -36,7 +36,6 @@ export default function QuizQuestions() {
     const fetchQuestions = async () => {
       const request = await apiRequest();
       setQuestions(request);
-      console.log(questions);
     }
     fetchQuestions();
   }, []);
@@ -49,11 +48,16 @@ export default function QuizQuestions() {
     setSelectedQuestion(undefined);
     setQuestionCounter(questionCounter + 1);
     const correctAnswer = Object.entries(currentQuestion.correct_answers).filter(([key, value]) => value == "true");
-    setAnswers([...answers, {userAnswer: answer, correctAnswer: correctAnswer[0], question: questionCounter}]);
+    const answerExplanation = currentQuestion.explanation || 'Sem justificativa';
+    const payload = [...answers, {userAnswer: answer, correctAnswer: correctAnswer[0], question: questionCounter, explanation: answerExplanation}]
+    setAnswers(payload);
+    if(questionCounter == 9){
+
+      goFinishPage(payload)
+    }
   }
 
   useEffect(() => {
-    console.log(answers)
   },[answers])
 
   const handleCheckbox = (target) => {
@@ -61,19 +65,15 @@ export default function QuizQuestions() {
     setAnswer(target.id);
   };
 
-  const goFinishPage = () => {
-    history.push('/quizGabarito')
+  const goFinishPage = (payload) => {
+    history.push('/quizGabarito', {data: payload})
   }
 
   const generateButton = () => {
-    if(questionCounter === 9){
       return(
-        <button onClick={() => goFinishPage()} className="button">finish</button> 
+        <button onClick={() => handleQuestion()} className="button" disabled={selectedQuestion === undefined}>{questionCounter == 9 ? "Finish quiz" : "Next question"}</button> 
       )
-    }
-     return <button onClick={() => handleQuestion()} className="button">next</button> 
-    
-  }
+  };
   
   return(
     <>
@@ -87,20 +87,22 @@ export default function QuizQuestions() {
           <a className="user-name-questions">{user}</a>
         </div>
       </header>
+
       <section className="question-section">
         <div className="question-box"><strong className="question-number">Question number {questionCounter + 1} :</strong>
           <a className="question">{currentQuestion && currentQuestion.question}</a>
         </div>
         {currentQuestion && Object.entries(currentQuestion.answers).map(([key, value], index) => {
-          if (value == null || undefined) return undefined;
+          if (value == null ) return undefined;
           return(
-            <div className="answer-alternative" key={index}>
-              <input type="checkbox" id={key} value={index} onChange={({ target }) => handleCheckbox(target)} checked={selectedQuestion == index} />
+            <button className="answer-alternative" key={index} id={key} value={index} onClick={({target}) => handleCheckbox(target)}>
+              <input type="radio" id={key} value={index} onChange={({ target }) => handleCheckbox(target)} checked={selectedQuestion == index} />
               {key.slice(-1)[0].toUpperCase()} - {value}
-            </div>
+            </button>
           )
         })}
       </section>
+
       <div className="button-box">
         {generateButton()}
       </div>
