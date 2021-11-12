@@ -33,12 +33,12 @@ export default function QuizHomePage() {
       </header>
 
       <section className="section-container">
-        <h1 className="section-container-title">Deseja realizar o quiz ?</h1>
+        <h1 className="section-container-title">Está na hora de você praticar!</h1>
         <div className="image-box">
           <img src={image} className="char-image"/>
         </div>
         <div className="select-section">
-          <label className="select-label">Escolha a dificuldade:</label>
+          <label className="select-label">Escolha a dificuldade do quiz:</label>
             <select name="difficulty" id="difficulty" value={select} size="1" className="select" onChange={({target}) => setSelect(target.value)}>
               <option value="Easy" id="easy">Fácil</option>
               <option value="Hard" id="hard">Difícil</option>

@@ -111,3 +111,41 @@
   border: 1px solid #41ADFB;
 }
 
+
+@media(max-width: 400px) {
+  .section-container {
+    .image-box {
+      display: none;
+    }
+    .section-container-title {
+      font-size: 50px;
+      font-weight: 400;
+      margin-left: 20px;
+      margin-top: 20%;
+    }
+
+    .button-start {
+      margin-top: 30%;
+    }
+  }
+
+  .header-container-quiz {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .header-title-quiz {
+      border-right: none;
+      font-weight: 400;
+      margin-right: 35px;
+    }
+
+    .user-container {
+      display: flex;
+      flex-direction: column;
+      font-size: 13px;
+    }
+  }
+
+}
+

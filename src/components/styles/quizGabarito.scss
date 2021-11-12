@@ -1,3 +1,5 @@
+
+
 .header-container-gabarito {
   display: flex;
   flex-direction: row;
@@ -83,9 +85,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px;
   height: 50%;
-  margin-top: -60px;
+  margin: auto 0 auto 0;
 
   .question-gabarito {
     background-color: #4BB6F2;
@@ -112,7 +113,8 @@
     font-size: 20px;
     font-weight: 500;
     height: 50px;
-    margin-top: 20px;
+    width: 200px;
+    margin-top: 40px;
     margin-bottom: 80px;
     border: none;
     border-radius: 10px;
@@ -120,10 +122,101 @@
     transition: 0.3s;
   }
 
+  .restart-button:active {
+    background-color: #ffff;
+    color: #4BB6F2;
+    border: 1px solid #4BB6F2;
+  }
+
   .restart-button:hover {
     background-color: #ffff;
     color: #4BB6F2;
     border: 1px solid #4BB6F2;
   }
+}
+
+@media(max-width: 400px) {
+  
+  .alternatives {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    .question-gabarito {
+      width: 300px;
+    }
+  }
+
+  .user-choice {
+    font-size: 20px;
+  }
+
+  .correct-choice {
+    font-size: 20px;
+  }
+
+  .Score-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .score {
+      width: 330px;
+    }
+  }
+
+  .header-container-gabarito {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .title-container-gabarito {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-left: 20px;
+      padding-right: 30px;
+      font-size: 15px;
+
+      .header-title-gabarito {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        font-weight: 400;
+        padding-right: 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid black ;
+      }
+
+      .title-gabarito {
+        align-items: center;
+        justify-content: center;
+        margin: -10px 0 10px -10px;
+        animation-name: left-right;
+        animation-duration: 0.5s;
+        
+      }
+    }
+
+    .user-container-gabarito {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+  
+      .user-gabarito {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  
+  }
+
+
+
 }
 

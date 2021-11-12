@@ -53,8 +53,8 @@ export default function Gabarito() {
       return (
         <div className="alternatives" key={index}>
           <h1 className="question-gabarito">Questão {index + 1}</h1>
-          <h1 className="user-choice" data-aos="fade-up" data-aos-duration="1000">Sua resposta: Letra: "{answer.userChoice}"</h1>
-          <h1 className="correct-choice" data-aos="fade-up" data-aos-duration="1200">Resposta correta: Letra: "{answer.correctChoice}"</h1>
+          <h1 className="user-choice" data-aos="zoom-in" data-aos-duration="1000">Sua resposta: Letra: "{answer.userChoice}"</h1>
+          <h1 className="correct-choice" data-aos="zoom-in" data-aos-duration="1200">Resposta correta: Letra: "{answer.correctChoice}"</h1>
         </div>
       )
     })
@@ -80,7 +80,7 @@ export default function Gabarito() {
 
       <section className="Score-box">
         <div className="score">Sua pontuação : <strong>{score && score}/10</strong></div>
-        <div className="result">
+        <div>
           {resultComparison()}
         </div>
       </section>

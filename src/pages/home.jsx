@@ -28,7 +28,7 @@ export default function Home() {
 
   function authName() {
     if(inputName === undefined || inputName < 1){
-      setError("Opa, você esqueceu de digitar seu nome! tente novamente.")
+      setError("Opa, você esqueceu de digitar seu nome!")
       return false;
     }
     return true;

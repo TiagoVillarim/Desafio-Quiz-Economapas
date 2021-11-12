@@ -9,10 +9,10 @@ export default function QuizQuestions() {
 
   const [questions, setQuestions] = useState([]);
   const [questionCounter, setQuestionCounter] = useState(0);
-  const [currentQuestion, setCurrentQuestion] = useState();
-  const [selectedQuestion, setSelectedQuestion] = useState();
+  const [currentQuestion, setCurrentQuestion] = useState(null);
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
   const [answers, setAnswers] = useState([]);
-  const [answer, setAnswer] = useState();
+  const [answer, setAnswer] = useState(null);
 
 
   let user = JSON.parse(localStorage.getItem("userName"));
@@ -45,7 +45,7 @@ export default function QuizQuestions() {
   }, [questionCounter, questions])
 
   const handleQuestion = () => {
-    setSelectedQuestion(undefined);
+    setSelectedQuestion(null);
     setQuestionCounter(questionCounter + 1);
     const correctAnswer = Object.entries(currentQuestion.correct_answers).filter(([key, value]) => value == "true");
     const answerExplanation = currentQuestion.explanation || 'Sem justificativa';
@@ -71,9 +71,10 @@ export default function QuizQuestions() {
 
   const generateButton = () => {
       return(
-        <button onClick={() => handleQuestion()} className="button" disabled={selectedQuestion === undefined}>{questionCounter == 9 ? "Finish quiz" : "Next question"}</button> 
+        <button onClick={() => handleQuestion()} className="button" disabled={selectedQuestion === null}>{questionCounter == 9 ? "Finish quiz" : "Next question"}</button> 
       )
   };
+  
   
   return(
     <>
@@ -93,7 +94,7 @@ export default function QuizQuestions() {
           <a className="question">{currentQuestion && currentQuestion.question}</a>
         </div>
         {currentQuestion && Object.entries(currentQuestion.answers).map(([key, value], index) => {
-          if (value === null ) return undefined;
+          if (value === null ) return null;
           return(
             <button className="answer-alternative" key={index} id={key} value={index} onClick={({target}) => handleCheckbox(target)}>
               <input className="radio-dot" type="radio" id={key} value={index} onChange={({ target }) => handleCheckbox(target)} checked={selectedQuestion == index} />
