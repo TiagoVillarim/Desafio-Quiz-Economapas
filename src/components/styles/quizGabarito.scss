@@ -135,87 +135,6 @@
   }
 }
 
-@media(max-width: 400px) {
-  
-  .alternatives {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-
-    .question-gabarito {
-      width: 300px;
-    }
-  }
-
-  .user-choice {
-    font-size: 20px;
-  }
-
-  .correct-choice {
-    font-size: 20px;
-  }
-
-  .Score-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .score {
-      width: 330px;
-    }
-  }
-
-  .header-container-gabarito {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .title-container-gabarito {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      margin-left: 20px;
-      padding-right: 30px;
-      font-size: 15px;
-
-      .header-title-gabarito {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        font-weight: 400;
-        padding-right: 0;
-        padding-bottom: 10px;
-        border-bottom: 1px solid black ;
-      }
-
-      .title-gabarito {
-        align-items: center;
-        justify-content: center;
-        margin: -10px 0 10px -10px;
-        animation-name: left-right;
-        animation-duration: 0.5s;
-        
-      }
-    }
-
-    .user-container-gabarito {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-left: 10px;
-  
-      .user-gabarito {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  }
-}
-
 @media(max-width: 1110px) {
   .header-container-gabarito {
     height: 50px;
@@ -271,3 +190,88 @@
     }
   }
 }
+
+@media(max-width: 400px) {
+  
+  .alternatives {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    .question-gabarito {
+      width: 300px;
+    }
+  }
+
+  .user-choice {
+    font-size: 20px;
+  }
+
+  .correct-choice {
+    font-size: 20px;
+  }
+
+  .Score-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .score {
+      width: 330px;
+    }
+  }
+
+  .header-container-gabarito {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+
+    .title-container-gabarito {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-left: 15px;
+      padding-right: 30px;
+      font-size: 15px;
+      margin-right: 10%;
+
+      .header-title-gabarito {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        font-weight: 400;
+        padding-right: 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid black ;
+      }
+
+      .title-gabarito {
+        align-items: center;
+        justify-content: center;
+        margin: -10px 0 10px -10px;
+        animation-name: left-right;
+        animation-duration: 0.5s;
+        
+      }
+    }
+
+    .user-container-gabarito {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+  
+      .user-gabarito {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+

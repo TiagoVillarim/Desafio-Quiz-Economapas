@@ -152,6 +152,55 @@
   }
 }
 
+@media(max-width: 1110px) {
+  .header-container-questions {
+    height: 80px;
+
+    .header-title-questions {
+      font-size: 20px;
+    }
+
+    .title-perguntas {
+      font-size: 13px;
+    }
+
+    .user-container-questions {
+      margin-right: 30px;
+      margin-left: 20px;
+      font-size: 15px;
+    }
+  }
+
+  .question-section {
+    height: 500px;
+    margin-top: -40px;
+
+    .question-box {
+      font-size: 20px;
+      height: 70px;
+      margin-bottom: 15px;
+
+      .question-number {
+        font-size: 15px;
+      }
+
+      .question {
+        font-size: 12px;
+      }
+    }
+
+    .answer-alternative {
+      font-size: 10px;
+      margin: 0.5% 0 1% 25%;
+      height: 10px;
+    }
+  }
+  .button-box {
+    margin-top: -10%;
+    margin-bottom: 0;
+  }
+};
+
 @media(max-width: 400px) {
   .header-container-questions {
     display: flex;
@@ -164,7 +213,8 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      margin-left: 20px;
+      margin-left: 50px;
+      margin-right: 50px;
       padding-right: 30px;
       font-size: 15px;
 
@@ -214,77 +264,31 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 300px;
+      height: 200px;
       font-size: 13px;
       padding: 10px;
+      margin-top: 50px;
       margin-left: 40px;
 
       .question-number {
         padding-right: 10px;
         margin-left: 20px;
-        width: 100px;
+        width: 200px;
       }
     }
 
     .answer-alternative {
       display: flex;
       margin-left: 40px;
-      width: 350px;
-      height: 80px;
-      margin-top: 10px;
+      width: 300px;
+      height: 70px;
+      margin-top: 20px;
       font-size: 12px;
     }
   }
-}
-
-.button-box  {
-  margin-top: 10px;
-}
-
-@media(max-width: 1110px) {
-  .header-container-questions {
-    height: 50px;
-
-    .header-title-questions {
-      font-size: 20px;
-    }
-
-    .title-perguntas {
-      font-size: 13px;
-    }
-
-    .user-container-questions {
-      margin-right: 30px;
-      font-size: 15px;
-    }
-  }
-
-  .question-section {
-    height: 500px;
-    margin-top: -40px;
-
-    .question-box {
-      font-size: 20px;
-      height: 70px;
-      margin-bottom: 15px;
-
-      .question-number {
-        font-size: 15px;
-      }
-
-      .question {
-        font-size: 12px;
-      }
-    }
-
-    .answer-alternative {
-      font-size: 10px;
-      margin: 5px 0 10px 250px;
-      height: 10px;
-    }
-  }
-  .button-box {
-    margin-top: -17%;
-    margin-bottom: 0;
+  .button-box  {
+    margin-top: 50px;
   }
 }
+
+
