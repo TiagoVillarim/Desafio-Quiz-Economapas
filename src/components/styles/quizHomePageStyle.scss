@@ -146,6 +146,46 @@
       font-size: 13px;
     }
   }
-
 }
+
+@media(max-width: 1150px) {
+  .header-container-quiz {
+    height: 50px;
+
+    .header-title-quiz {
+      font-size: 20px;
+    }
+
+    .title-perguntas {
+      font-size: 13px;
+    }
+
+    .user-container {
+      margin-right: 30px;
+      font-size: 15px;
+    }
+  }
+  .section-container {
+    .section-container-title {
+      margin-top: -45px;
+      font-size: 35px;
+    }
+
+    .image-box {
+      .char-image {
+        height: 50vh;
+      }
+    }
+
+    .button-start {
+      margin-top: 40px;
+    }
+
+    .select-section {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
 

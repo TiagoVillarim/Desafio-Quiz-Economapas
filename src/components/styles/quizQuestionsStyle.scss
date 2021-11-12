@@ -240,3 +240,51 @@
 .button-box  {
   margin-top: 10px;
 }
+
+@media(max-width: 1110px) {
+  .header-container-questions {
+    height: 50px;
+
+    .header-title-questions {
+      font-size: 20px;
+    }
+
+    .title-perguntas {
+      font-size: 13px;
+    }
+
+    .user-container-questions {
+      margin-right: 30px;
+      font-size: 15px;
+    }
+  }
+
+  .question-section {
+    height: 500px;
+    margin-top: -40px;
+
+    .question-box {
+      font-size: 20px;
+      height: 70px;
+      margin-bottom: 15px;
+
+      .question-number {
+        font-size: 15px;
+      }
+
+      .question {
+        font-size: 12px;
+      }
+    }
+
+    .answer-alternative {
+      font-size: 10px;
+      margin: 5px 0 10px 250px;
+      height: 10px;
+    }
+  }
+  .button-box {
+    margin-top: -17%;
+    margin-bottom: 0;
+  }
+}

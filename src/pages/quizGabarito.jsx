@@ -2,14 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router";
 import quizGabaritoStyle from "../components/styles/quizGabarito.scss";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 export default function Gabarito() {
-
-  AOS.init({
-    once: true
-  })
 
   const history = useHistory()
 
@@ -24,7 +18,7 @@ export default function Gabarito() {
     let scoreCounter = 0
 
      const answersComparison = resultData.map(answer => {
-        const correctAlt = answer.correctAnswer[0].split('_')[1];
+        const correctAlt = answer.correctAnswer[0].split('_')[1]; 
         const userAlt = answer.userAnswer.split('_')[1];
         const isCorrect = correctAlt === userAlt
         const payload = {
@@ -53,8 +47,8 @@ export default function Gabarito() {
       return (
         <div className="alternatives" key={index}>
           <h1 className="question-gabarito">Questão {index + 1}</h1>
-          <h1 className="user-choice" data-aos="zoom-in" data-aos-duration="1000">Sua resposta: Letra: "{answer.userChoice}"</h1>
-          <h1 className="correct-choice" data-aos="zoom-in" data-aos-duration="1200">Resposta correta: Letra: "{answer.correctChoice}"</h1>
+          <h1 className="user-choice">Sua resposta: Letra: "{answer.userChoice}"</h1>
+          <h1 className="correct-choice">Resposta correta: Letra: "{answer.correctChoice}"</h1>
         </div>
       )
     })

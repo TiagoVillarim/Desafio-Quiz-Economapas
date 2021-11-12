@@ -213,10 +213,61 @@
         flex-direction: column;
       }
     }
-  
   }
-
-
-
 }
 
+@media(max-width: 1110px) {
+  .header-container-gabarito {
+    height: 50px;
+
+    .header-title-gabarito {
+      font-size: 20px;
+    }
+
+    .title-gabarito {
+      font-size: 13px;
+    }
+
+    .user-container-gabarito {
+      margin-right: 30px;
+      font-size: 15px;
+    }
+  }
+
+  .Score-box {
+    margin-top: 40px;
+
+    .score {
+      font-size: 23px;
+      width: 500px;
+    }
+  }
+
+  .alternatives {
+    height: 30%;
+
+    .question-gabarito {
+      height: 40px;
+      width: 300px;
+      font-size: 15px;
+    }
+
+    .user-choice {
+      font-size: 18px;
+    }
+
+    .correct-choice {
+      font-size: 18px;
+    }
+  }
+
+  .buttons {
+    margin-top: 20px;
+
+    .restart-button {
+      width: 150px;
+      height: 40px;
+      font-size: 15px;
+    }
+  }
+}
